@@ -3661,6 +3661,16 @@
         if (evt.key === this.options.multiDragKey) {
           this.multiDragKeyDown = false;
         }
+      },
+			getMultiDragElements() {
+        return multiDragElements;
+      },
+      addMultiDragElement(element) {
+        toggleClass(element, this.options.selectedClass, true);
+        multiDragElements.push(element);
+      },
+      deselectMultiDragElements() {
+        this._deselectMultiDrag();
       }
     };
     return _extends(MultiDrag, {
